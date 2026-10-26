@@ -1,0 +1,21 @@
+{
+  "schemaVersion": 1,
+  "id": "hud_mod",
+  "version": "${version}",
+  "name": "HUD Mod",
+  "description": "Client-side HUD: keystroke overlay, coordinates and FPS. Visual only, no gameplay changes.",
+  "authors": [],
+  "license": "MIT",
+  "environment": "client",
+  "entrypoints": {
+    "client": [
+      "com.example.hud.HudClient"
+    ]
+  },
+  "depends": {
+    "fabricloader": ">=0.14.21",
+    "minecraft": "~1.20.1",
+    "java": ">=17",
+    "fabric-api": "*"
+  }
+}
