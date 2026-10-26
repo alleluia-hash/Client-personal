@@ -1,0 +1,42 @@
+name: build
+
+on:
+  push:
+  workflow_dispatch:
+
+permissions:
+  contents: write
+
+jobs:
+  build:
+    runs-on: ubuntu-latest
+    steps:
+      - uses: actions/checkout@v4
+
+      - name: Unpack project zip
+        run: |
+          if [ -f hud-mod.zip ]; then
+            unzip -o hud-mod.zip
+            rm hud-mod.zip
+            git config user.name "github-actions[bot]"
+            git config user.email "41898282+github-actions[bot]@users.noreply.github.com"
+            git add -A
+            git commit -m "Unpack mod source"
+            git push || true
+          fi
+
+      - uses: actions/setup-java@v4
+        with:
+          distribution: temurin
+          java-version: 17
+
+      - uses: gradle/actions/setup-gradle@v3
+        with:
+          gradle-version: 8.5
+
+      - run: gradle build
+
+      - uses: actions/upload-artifact@v4
+        with:
+          name: hud-mod
+          path: build/libs/*.jar
