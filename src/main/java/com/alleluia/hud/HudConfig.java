@@ -1,4 +1,4 @@
-package com.example.hud;
+package com.alleluia.hud;
 
 /** Which HUD pieces are shown. Kept in memory only, so they reset when the game restarts. */
 public final class HudConfig {

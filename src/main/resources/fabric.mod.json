@@ -4,12 +4,12 @@
   "version": "${version}",
   "name": "HUD Mod",
   "description": "Client-side HUD: keystroke overlay, coordinates and FPS. Visual only, no gameplay changes.",
-  "authors": [],
+  "authors": ["alleluia-hash"],
   "license": "MIT",
   "environment": "client",
   "entrypoints": {
     "client": [
-      "com.example.hud.HudClient"
+      "com.alleluia.hud.HudClient"
     ]
   },
   "depends": {

@@ -1,4 +1,4 @@
-package com.example.hud;
+package com.alleluia.hud;
 
 import org.lwjgl.glfw.GLFW;
 
